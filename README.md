@@ -43,13 +43,13 @@ Starting the Raspberry pi
 ### Enable RPi features
 1. RPi Camera. This step is only needed for the RPi Camera. It is not required for a USB webcam. 
 $sudo raspi-config
-Move down/up arrow keys to highlight “Choose interfacing options” and arrow right arrow key to highlight select. Press enter
+Move down/up arrow keys to highlight “Interfacing options” and arrow right arrow key to highlight select. Press enter
 2. SSH
 $sudo raspi-config
-Move down/up arrow keys to highlight “Choose Network options” and arrow right arrow key to highlight select. Choose SSH. Press enter
+Move down/up arrow keys to highlight “Interfacing options” and arrow right arrow key to highlight select. Choose SSH. Press enter
 3. Wifi (Optional)
 $sudo raspi-config
-Move down/up arrow keys to highlight “Choose Network options” and arrow right arrow key to highlight select. Choose Wifi. Enter SSID and password of WiFi network. Press enter
+Move down/up arrow keys to highlight "Network options” and arrow right arrow key to highlight select. Choose Wifi. Enter SSID and password of WiFi network. Press enter
 $sudo reboot
 
 ### Open SSH Session (Optional) 
@@ -74,7 +74,7 @@ $sudo usermod –aG docker pi where pi is the username
 $sudo reboot
 
 ### Install Litterbug
-1. Clone this repository
-2. $sudo apt-get install git
+1. $sudo apt-get install git
+2. Clone this repository 
 3. $cd Litterbug-docker-raspbian
 4. $docker build -t litterbugclient . 
