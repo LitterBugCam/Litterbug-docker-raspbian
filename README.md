@@ -78,7 +78,8 @@ Using e.g. Filezilla copy the .certications folder to the /home/pi directory
 
 
 ### Install Litterbug
-1. $sudo apt-get install git
+1. $sudo apt-get update
+2. $sudo apt-get install git
 2. Clone this repository 
 3. $cd Litterbug-docker-raspbian
 4. $docker build -t litterbugclient . 
