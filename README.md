@@ -85,4 +85,4 @@ Todo How to generate certs
 
 ### Copy certificates
 3. $cd Litterbug-docker-raspbian
-4. $docker build -t litterbugclient . 
+4. $sudo docker build -t litterbugclient . 
