@@ -72,9 +72,6 @@ $curl –sSL https://get.docker.com | sh
 $sudo usermod –aG docker pi where pi is the username
 3. Reboot
 $sudo reboot
-### Copy certificates
-Todo How to generate certs
-Using e.g. Filezilla copy the .certications folder to the /home/pi directory
 
 
 ### Install Litterbug
@@ -84,4 +81,6 @@ Using e.g. Filezilla copy the .certications folder to the /home/pi directory
 3. $cd Litterbug-docker-raspbian
 4. $docker build -t litterbugclient . 
 
-
+### Copy certificates
+Todo How to generate certs
+Using e.g. Filezilla copy the .certications folder to the /home/pi/Litterbug-docker-raspian directory
