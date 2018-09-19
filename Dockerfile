@@ -1,5 +1,7 @@
 FROM debian:jessie
 
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends apt-utils 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \
 		curl \
@@ -18,6 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 RUN apt-get update && apt-get install -y \
 		autoconf \
 		build-essential \
+		cmake \
 		imagemagick \
 		libbz2-dev \
 		libcurl4-openssl-dev \
@@ -78,10 +81,17 @@ RUN packages="curl cmake python  python-dev  python-pip python3-pip unzip superv
 # IDK if LAPACK/BLAS/etc works, or gstreamer backend
 # TODO: Where are the build logs?
 # PYTHON_DEFAULT_EXECUTABLE
+RUN chmod 757 /tmp
 RUN cd /tmp \
     && git clone git://github.com/opencv/opencv \
+	&& cd opencv \
+	&& git checkout tags/3.2.0 \
+	&& cd .. \
     && git clone git://github.com/opencv/opencv_contrib \
-    && cd opencv \
+	&& cd opencv_contrib \
+	&& git checkout tags/3.2.0 \
+	&& cd .. \
+	&& cd opencv \
     && mkdir build \
     && cd build \
     && cmake -DCMAKE_BUILD_TYPE=RELEASE \
@@ -106,8 +116,8 @@ RUN cd /tmp \
     && make install \
     && make package \
     && make clean \
-    && cd / \
-    && rm -rf /tmp/*opencv*
+    && cd /
+
 
 #RUN wget https://bootstrap.pypa.io/get-pip.py
 #RUN python get-pip.py
