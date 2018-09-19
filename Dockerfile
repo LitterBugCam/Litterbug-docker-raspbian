@@ -120,8 +120,8 @@ RUN cd /tmp \
     && make clean \
     && cd /
 
-#RUN wget https://bootstrap.pypa.io/get-pip.py
-#RUN python get-pip.py
+RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN python get-pip.py
 
 RUN pip install  enum AWSIoTPythonSDK boto3 inotify_simple uuid psycopg2
 
