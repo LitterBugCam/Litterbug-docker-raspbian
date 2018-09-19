@@ -83,6 +83,6 @@ $sudo reboot
 Using e.g. Filezilla copy the .certications folder to the /home/pi/Litterbug-docker-raspian directory
 Todo How to generate certs
 
-### Copy certificates
+### Start the build
 3. $cd Litterbug-docker-raspbian
 4. $sudo docker build -t litterbugclient . 
