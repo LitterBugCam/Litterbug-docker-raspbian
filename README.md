@@ -77,12 +77,12 @@ $sudo reboot
 ### Install Litterbug
 1. $sudo apt-get update
 2. $sudo apt-get install git
-3. Clone this repository $git clone https://github.com/LitterBugCam/Litterbug-docker-raspian.git
+3. Clone this repository $git clone https://github.com/LitterBugCam/Litterbug-docker-raspbian.git
 
 ### Copy certificates
 Using e.g. Filezilla copy the .certications folder to the /home/pi/Litterbug-docker-raspian directory
 Todo How to generate certs
 
-### Copy certificates
+### Start the build
 3. $cd Litterbug-docker-raspbian
 4. $sudo docker build -t litterbugclient . 
