@@ -123,8 +123,7 @@ RUN cd /tmp \
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
 
-RUN pip install  enum AWSIoTPythonSDK boto3 inotify_simple uuid psycopg2 python-psycopg2
-
+RUN pip install  enum AWSIoTPythonSDK boto3 inotify_simple uuid  
 
 WORKDIR /usr/src/app
 
