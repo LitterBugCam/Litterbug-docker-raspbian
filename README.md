@@ -16,20 +16,20 @@ For more information, please visit our website https://litterbug.cam/
 
 ### Prepare the SD card with RPi OS
 On PC/Laptop connected to Internet you will need
-a) Slot to read SD card
-b) Disk formatter on PC e.g. https://www.raspberrypi.org/documentation/installation/sdxc_formatting.md
-c)  Sha256 checker on PC e.g. https://download.cnet.com/MD5-SHA-Checksum-Utility/3000-2092_4-10911445.html
-d) File extracter on PC  e.g http://www.winzip.com/win/en
-e) Disk imager on PC e.g. https://sourceforge.net/projects/win32diskimager/
+a) Slot to read SD card<br/>
+b) Disk formatter on PC e.g. https://www.raspberrypi.org/documentation/installation/sdxc_formatting.md<br/>
+c) Sha256 checker on PC e.g. https://download.cnet.com/MD5-SHA-Checksum-Utility/3000-2092_4-10911445.html<br/>
+d) File extracter on PC  e.g http://www.winzip.com/win/en<br/>
+e) Disk imager on PC e.g. https://sourceforge.net/projects/win32diskimager/<br/>
 
 Insert SD card into slot in PC/Laptop and format the SD card.
 If the card is new, choose quick format. Otherwise choose Overwrite format.
 
 Download Raspbian Stretch Lite to MicroSD card
-1.	Using c above, download Raspian Stretch Lite to the PC from https://www.raspberrypi.org/downloads/
-2.	Using d above, check the SHA256 to ensure that the download is not corrupt 
-3.	Using e above, extract the Raspian Lite image file from the .zip, .tar on the PC
-4.	Using f above, write the image to the SD card
+1.	Download Raspian Stretch Lite to the PC from https://www.raspberrypi.org/downloads/
+2.	Using c above, check the SHA256 to ensure that the download is not corrupt 
+3.	Using d above, extract the Raspian Lite image file from the .zip, .tar on the PC
+4.	Using e above, write the image to the SD card
 5.	Exit the imager and eject the SD card.
 
 ### Install OS on RPi
