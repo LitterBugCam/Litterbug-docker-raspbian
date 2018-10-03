@@ -84,5 +84,8 @@ Using e.g. Filezilla copy the .certications folder to the /home/pi/Litterbug-doc
 Todo How to generate certs
 
 ### Start the build
-3. $cd Litterbug-docker-raspbian
-4. $sudo docker build -t litterbugclient . 
+1. $cd Litterbug-docker-raspbian
+2. $sudo docker build -t litterbugclient . 
+
+## Start the container
+1. $sudo docker run -i -t litterbugclient /bin/bash 
