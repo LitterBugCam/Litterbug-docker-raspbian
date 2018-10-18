@@ -123,8 +123,7 @@ RUN cd /tmp \
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
 
-RUN pip install  enum AWSIoTPythonSDK boto3 inotify_simple uuid opencv-python
-
+RUN pip install  enum AWSIoTPythonSDK boto3 inotify_simple uuid 
 WORKDIR /usr/src/app
 
 COPY . /usr/src/app
