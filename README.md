@@ -50,7 +50,13 @@ Move down/up arrow keys to highlight “Interfacing options” and arrow right a
 3. Wifi (Optional)
 $sudo raspi-config
 Move down/up arrow keys to highlight "Network options” and arrow right arrow key to highlight select. Choose Wifi. Enter SSID and password of WiFi network. Press enter
-$sudo reboot
+4. $sudo reboot
+
+### Test the camera
+1. Still picture  $raspistill -o imagename.jpg
+2. Video $raspivid -o videoname.h264
+3. For more commands see https://www.raspberrypi.org/documentation/usage/camera/raspicam/README.md
+4. To play the image/video $omxplayer -o hdmi /path/to/imagename.jpg
 
 ### Open SSH Session (Optional) 
 With the SSH session, it will be easier to input the commands by cut and paste instead of typing. 
