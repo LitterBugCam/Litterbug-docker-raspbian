@@ -19,52 +19,53 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		subversion \
 	&& rm -rf /var/lib/apt/lists/*
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils		
-RUN apt-get update && apt-get install -y \
-		autoconf \
-		build-essential \
-		cmake \
-		imagemagick \
-		libbz2-dev \
-		libcurl4-openssl-dev \
-		libevent-dev \
-		libffi-dev \
-		libglib2.0-dev \
-		libjpeg-dev \
-		libmagickcore-dev \
-		libmagickwand-dev \
-		libncurses-dev \
-		libpq-dev \
-		libreadline-dev \
-		libsqlite3-dev \
-		libssl-dev \
-		libxml2-dev \
-		libxslt-dev \
-		libyaml-dev \
-		zlib1g-dev \
-		$( \
-			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then \
-				echo 'default-libmysqlclient-dev'; \
-			else \
-				echo 'libmysqlclient-dev'; \
-			fi \
-		) \
-	&& rm -rf /var/lib/apt/lists/*
+#RUN apt-get update && apt-get install -y \
+#		autoconf \
+#		build-essential \
+#		cmake \
+#		imagemagick \
+#		libbz2-dev \
+#		libcurl4-openssl-dev \
+#		libevent-dev \
+#		libffi-dev \
+#		libglib2.0-dev \
+#		libjpeg-dev \
+#		libmagickcore-dev \
+#		libmagickwand-dev \
+#		libncurses-dev \
+#		libpq-dev \
+#		libreadline-dev \
+#		libsqlite3-dev \
+#		libssl-dev \
+#		libxml2-dev \
+#		libxslt-dev \
+#		libyaml-dev \
+#		zlib1g-dev \
+#		$( \
+#			if apt-cache show 'default-libmysqlclient-dev' 2>/dev/null | grep -q '^Version:'; then \
+#				echo 'default-libmysqlclient-dev'; \
+#			else \
+#				echo 'libmysqlclient-dev'; \
+#			fi \
+#		) \
+#	&& rm -rf /var/lib/apt/lists/*
+
+#RUN apt-get update && apt-get install -y \
+#	libgstreamer-plugins-base1.0-0 \
+#	libgstreamer1.0-0 \
+#	gstreamer1.0-plugins-base \
+#	gstreamer1.0-plugins-good \
+#	gstreamer1.0-plugins-bad \
+#	gstreamer1.0-libav 
 
 RUN apt-get update && apt-get install -y \
-	libgstreamer-plugins-base1.0-0 \
-	libgstreamer1.0-0 \
-	gstreamer1.0-plugins-base \
-	gstreamer1.0-plugins-good \
-	gstreamer1.0-plugins-bad \
-	gstreamer1.0-libav 
-
-
+        build-essential
 	
 ENV INITSYSTEM on
 
 # GStreamer  and openCV deps
 # Several retries is a workaround for flaky downloads
-RUN packages="curl cmake python  python-dev  python-pip python3-pip unzip supervisor libzmq3 libzmq3-dev v4l-utils python3-dev python3-numpy python-numpy libgstreamer1.0-dev libgstreamer1.0-0 libgstreamer-vaapi1.0-dev libgstreamer-vaapi1.0-0 libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev libgstreamer-plugins-bad1.0-0 libgstreamer-plugins-base1.0-0 gstreamer1.0-tools gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-omx build-essential cmake libeigen3-dev libjpeg-dev libtiff5-dev libtiff5 libjasper-dev libjasper1 libpng12-dev libpng12-0 libavcodec-dev  libavcodec56 libavformat-dev libavformat56 libswscale-dev libswscale3 libv4l-dev libv4l-0 libatlas-base-dev libatlas3-base gfortran libblas-dev libblas3 liblapack-dev liblapack3 python3-dev libpython3-dev python-opencv numpy python-psycopg2" \
+RUN packages="curl cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev" \
     && apt-get -y update \
     && apt-get -y install $packages \
     || apt-get -y install $packages \
