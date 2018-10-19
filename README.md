@@ -62,18 +62,19 @@ This only works if you have installed the Desktop version
 1. To play the image/video $omxplayer -o hdmi /path/to/imagename.jpg
 
 ### View image/video - Lite version of Raspian
-#### OMXPLAYER
+
+#### Install OMXPLAYER (for Video)
 Raspbian lite installations do not include omxplayer. If you installed the full version of e.g. Stretch, you can skip these steps
 1. $sudo apt-get update
 2. $sudo apt-install omxplayer
 
-#### FBI
+#### Install FBI (for images)
 Raspbian lite installations do not include omxplayer. If you installed the full version of e.g. Stretch, you can skip these steps
 1. $sudo apt-install fbi
 
-## View image/video
-1. To play the image/video $omxplayer -o hdmi /path/to/imagename.jpg
-2. Issue command on RPi terminal (it does not work using SSH) $sudo fbi -T 2 imagename.jpg
+#### View image/video
+1. To play the image/video $omxplayer -o hdmi /path/to/videoname.jpg
+2. Issue command on RPi terminal (it does not work using SSH) $sudo fbi -T 2 /path/to/imagename.jpg
 
 ### Open SSH Session (Optional) 
 With the SSH session, it will be easier to input the commands by cut and paste instead of typing. 
