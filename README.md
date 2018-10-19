@@ -57,8 +57,8 @@ Move down/up arrow keys to highlight "Network options” and arrow right arrow k
 2. Video $raspivid -o videoname.h264
 3. For more commands see https://www.raspberrypi.org/documentation/usage/camera/raspicam/README.md
 
-## View image/video - Desktop version of Raspian
-This only works if you have installed the D
+### View image/video - Desktop version of Raspian
+This only works if you have installed the Desktop version
 1. To play the image/video $omxplayer -o hdmi /path/to/imagename.jpg
 
 ### View image/video - Lite version of Raspian
