@@ -66,11 +66,11 @@ This only works if you have installed the Desktop version
 #### Install OMXPLAYER (for Video)
 Raspbian lite installations do not include omxplayer. If you installed the full version of e.g. Stretch, you can skip these steps
 1. $sudo apt-get update
-2. $sudo apt-install omxplayer
+2. $sudo apt-get install omxplayer
 
 #### Install FBI (for images)
 Raspbian lite installations do not include omxplayer. If you installed the full version of e.g. Stretch, you can skip these steps
-1. $sudo apt-install fbi
+1. $sudo apt-get install fbi
 
 #### View image/video
 1. To play the image/video $omxplayer -o hdmi /path/to/videoname.jpg
