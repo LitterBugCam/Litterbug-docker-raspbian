@@ -1,0 +1,158 @@
+
+# Increase swap size of Raspberry pi
+https://raspberrypi.stackexchange.com/questions/70/how-to-set-up-swap-space
+To make the swap file (only if necessary - not needed on Raspbian Stretch)
+https://digitizor.com/create-swap-file-ubuntu-linux/
+
+//Update /etc/dphys-swapfile
+sudo chmod 757 /etc/dphys-swapfile
+nano /etc/dphys-swapfile
+Change as follows
+1.CONF_SWAPSIZE = 2650
+Uncomment
+2. CONF_SWAPFACTOR=2
+
+# restart the file or reboot
+sudo /etc/init.d/dphys-swapfile restart
+or
+sudo reboot
+
+#Start installing components for opencv2
+sudo apt-get update
+sudo apt-get install apt-utils 
+
+
+
+sudo apt-get install ca-certificates 
+sudo apt-get -y install curl 
+sudo apt-get install wget 
+sudo apt-get -y install bzr 
+sudo apt-get -y install git 
+sudo apt-get -y install mercurial 
+sudo apt-get -y install openssh-client 
+sudo apt-get -y install subversion 
+
+	
+
+sudo apt-get -y install autoconf 
+sudo apt-get install build-essential 
+sudo apt-get -y install cmake 
+sudo apt-get -y install imagemagick 
+sudo apt-get -y install libbz2-dev 
+sudo apt-get -y install libcurl4-openssl-dev 
+sudo apt-get -y install libevent-dev 
+sudo apt-get install libffi-dev 
+sudo apt-get -y install libglib2.0-dev 
+sudo apt-get -y install libjpeg-dev 
+sudo apt-get -y install libmagickcore-dev 
+sudo apt-get -y install libmagickwand-dev 
+sudo apt-get -y install libncurses-dev 
+sudo apt-get -y install libpq-dev 
+sudo apt-get install libreadline-dev 
+sudo apt-get install libsqlite3-dev 
+sudo apt-get -y install libssl-dev 
+sudo apt-get install libxml2-dev 
+sudo apt-get -y install libxslt-dev 
+sudo apt-get -y install libyaml-dev 
+sudo apt-get install zlib1g-dev 
+
+
+sudo apt-get install -y libgstreamer-plugins-base1.0-0 
+sudo apt-get install libgstreamer1.0-0 
+sudo apt-get install gstreamer1.0-plugins-base 
+sudo apt-get install -y gstreamer1.0-plugins-good 
+sudo apt-get install -y gstreamer1.0-plugins-bad 
+sudo apt-get install -y gstreamer1.0-libav 
+
+
+sudo apt-get -y install curl  python  python-dev  python-pip python3-pip unzip supervisor 
+
+sudo apt-get -y install libzmq3-dev v4l-utils python3-dev python3-numpy python-numpy 
+sudo apt-get install -y libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev libgstreamer-plugins-bad1.0-0 libgstreamer-plugins-base1.0-0 gstreamer1.0-tools gstreamer1.0-plugins-base  gstreamer1.0-plugins-ugly gstreamer1.0-omx
+
+
+sudo apt-get -y install libeigen3-dev libjpeg-dev libtiff5-dev libtiff5 libjasper-dev libjasper1 libpng12-dev libpng12-0 libavcodec-dev libavformat-dev
+
+sudo apt-get -y install libswscale-dev libv4l-dev  libv4l-0 libatlas-base-dev libatlas3-base gfortran libblas-dev libblas3 liblapack-dev liblapack3 python3-dev libpython3-dev 
+
+
+sudo apt-get -y install python-opencv  python-psycopg2
+
+
+sudo chmod 757 /tmp
+cd /tmp 
+git clone git://github.com/opencv/opencv
+cd opencv 
+git checkout tags/3.4.0 
+cd .. 
+git clone git://github.com/opencv/opencv_contrib
+cd opencv_contrib
+git checkout tags/3.4.0 
+cd ..
+cd opencv
+mkdir build
+cd build 
+
+
+
+cmake -DCMAKE_BUILD_TYPE=RELEASE \
+    -DCMAKE_INSTALL_PREFIX=/usr/local \
+    -DINSTALL_C_EXAMPLES=OFF \
+    -DINSTALL_PYTHON_EXAMPLES=OFF \
+    -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
+    -DBUILD_EXAMPLES=OFF \
+    -DENABLE_VFPV3=ON \
+  -DENABLE_NEON=ON \
+   -DHARDFP=ON \
+    -DWITH_CAROTENE=OFF \
+    -DBUILD_NEW_PYTHON_SUPPORT=ON \
+    -DWITH_FFMPEG=OFF \
+    -DWITH_GSTREAMER=ON \
+    -DWITH_CUDA=OFF \
+    -DWITH_CUFFT=OFF \
+    -DWITH_CUBLAS=OFF \
+    -DWITH_LAPACK=ON \
+    ..
+
+
+sudo make install 
+sudo make package
+
+# Install the application (Litterbug Client)
+
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py 
+sudo pip install  enum AWSIoTPythonSDK boto3 inotify_simple uuid 
+
+
+sudo cp -r bin include lib /usr/src/app
+
+cd /usr/src/app
+
+sudo git clone https://github.com/LitterBugCam/Litterbug-docker-raspbian.git
+cd Litterbug-docker-raspbian
+
+# Configure the application
+sudo mkdir detectionss3
+sudo mkdir lives3
+sudo mkdir .certifications
+sudo chmod 757 .certifications
+cd ..
+sudo chmod 757 Litterbug-docker-raspbian
+
+# Copy the certification files and AWS keys to the Pi
+Using e.g. Filezilla copy the .certifications folder to the
+/usr/src/app/Litterbug-docker-raspbian/.certifications
+Using e.g. Filezilla copy the keys.txt folder to the
+/usr/src/app/Litterbug-docker-raspbian/ folder
+
+# Compile the application
+cd Litterbug-docker-raspbian
+sudo ldconfig
+sudo make
+
+#Start the application
+sudo python AWSIOT_Client.py
+
+
+
