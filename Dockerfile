@@ -14,8 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		git \
 		mercurial \
 		openssh-client \
-		subversion \
-	&& rm -rf /var/lib/apt/lists/*
+		subversion 
 		
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils	
 RUN apt-get install -y \
@@ -46,8 +45,7 @@ RUN apt-get install -y \
 			else \
 				echo 'libmysqlclient-dev'; \
 			fi \
-		) \
-	&& rm -rf /var/lib/apt/lists/*
+		) 
 	
 	
 # Several retries is a workaround for flaky downloads
@@ -57,8 +55,7 @@ RUN packages="libgstreamer-plugins-base1.0-0 libgstreamer1.0-0 gstreamer1.0-plug
     || apt-get -y install $packages \
     || apt-get -y install $packages \
     || apt-get -y install $packages \
-    || apt-get -y install $packages \
-    || apt-get clean && rm -rf /var/lib/apt/lists/*
+    || apt-get -y install $packages 
     
 ENV INITSYSTEM on
 
