@@ -68,18 +68,14 @@ RUN packages="libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-
     || apt-get -y install $packages 
     
 ENV INITSYSTEM on
-
-RUN apt-get install -y \
-        libeigen3-dev\
-	libjpeg-dev\
-	libtiff5-dev\
-	libtiff5\
-	libjasper-dev\
-	libjasper1\
-	libpng12-dev\
-	libpng12-0\
-	libavcodec-dev\
-	libavformat-dev 
+RUN packages="libeigen3-dev libjpeg-dev libtiff5-dev libtiff5 libjasper-dev libjasper1 libpng12-dev libpng12-0 libavcodec-dev libavformat-dev"\
+    && apt-get -y update \
+    && apt-get -y install $packages \
+    || apt-get -y install $packages \
+    || apt-get -y install $packages \
+    || apt-get -y install $packages \
+    || apt-get -y install $packages 
+    
 
 RUN apt-get install -y \
         libswscale-dev\
