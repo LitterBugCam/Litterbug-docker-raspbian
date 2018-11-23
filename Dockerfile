@@ -48,14 +48,17 @@ RUN apt-get install -y \
 			fi \
 		) \
 	&& rm -rf /var/lib/apt/lists/*
-
-RUN apt-get install -y \
-	libgstreamer-plugins-base1.0-0 \
-	libgstreamer1.0-0 \
-	gstreamer1.0-plugins-base \
-	gstreamer1.0-plugins-good \
-	gstreamer1.0-plugins-bad \
-	gstreamer1.0-libav 
+	
+	
+# Several retries is a workaround for flaky downloads
+RUN packages="libgstreamer-plugins-base1.0-0 libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-libav"
+    && apt-get -y update \
+    && apt-get -y install $packages \
+    || apt-get -y install $packages \
+    || apt-get -y install $packages \
+    || apt-get -y install $packages \
+    || apt-get -y install $packages \
+    || apt-get clean && rm -rf /var/lib/apt/lists/*	
 	
 ENV INITSYSTEM on
 
