@@ -26,7 +26,7 @@ Insert SD card into slot in PC/Laptop and format the SD card.
 If the card is new, choose quick format. Otherwise choose Overwrite format.
 
 Download Raspbian Stretch Lite to MicroSD card
-1.	Download Raspian Stretch Lite to the PC from https://www.raspberrypi.org/downloads/
+1.	Download Raspian Stretch Lite (2018-04-18-raspbian-stretch-lite) to the PC from https://www.raspberrypi.org/downloads/
 2.	Using c above, check the SHA256 to ensure that the download is not corrupt 
 3.	Using d above, extract the Raspian Lite image file from the .zip, .tar on the PC
 4.	Using e above, write the image to the SD card
