@@ -40,6 +40,16 @@ Starting the Raspberry pi
 2.	Turn on the RPI and monitor powers on. 
 3.	Log onto pi (default username: pi, password: raspberry)
 
+
+### Increase the SWAP size of Raspberry pi
+$sudo chmod 757 /etc/dphys-swapfile
+$sudo nano /etc/dphys-swapfile
+Change as follows
+1.CONF_SWAPSIZE = 2650
+Uncomment
+2. CONF_SWAPFACTOR=2
+Ctrl x and Yes to save and exit.
+
 ### Enable RPi features
 1. RPi Camera. This step is only needed for the RPi Camera. It is not required for a USB webcam. 
 $sudo raspi-config
