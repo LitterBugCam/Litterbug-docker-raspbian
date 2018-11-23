@@ -68,7 +68,8 @@ RUN packages="curl libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstre
     || apt-get -y install $packages 
     
 ENV INITSYSTEM on
-RUN packages="curl libeigen3-dev libjpeg-dev libtiff5-dev libtiff5 libjasper-dev libjasper1 libpng12-dev libpng12-0 libavcodec-dev libavformat-dev"\
+# removed libjasper-dev libjasper1 libpng12-dev 
+RUN packages="curl libeigen3-dev libjpeg-dev libtiff5-dev libtiff5 libpng12-0 libavcodec-dev libavformat-dev"\
     && apt-get update \
     && apt-get -y install $packages \
     || apt-get -y install $packages \
