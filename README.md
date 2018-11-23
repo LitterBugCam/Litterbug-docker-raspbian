@@ -98,14 +98,19 @@ $sudo usermod –aG docker pi where pi is the username
 $sudo reboot
 
 
+### Copy certificates
+Using e.g. Filezilla copy the .certications folder to the /home/pi/ directory
+Todo How to generate certs
+### Copy keys
+Using e.g. Filezilla copy the keys.txt file the /home/pi/ directory
+Todo How to generate certs
+
 ### Install Litterbug
 1. $sudo apt-get update
 2. $sudo apt-get install git
 3. Clone this repository $git clone https://github.com/LitterBugCam/Litterbug-docker-raspbian.git
 
-### Copy certificates
-Using e.g. Filezilla copy the .certications folder to the /home/pi/Litterbug-docker-raspian directory
-Todo How to generate certs
+
 
 ### Start the build
 1. $cd Litterbug-docker-raspbian
