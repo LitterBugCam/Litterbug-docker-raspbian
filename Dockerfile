@@ -59,8 +59,8 @@ RUN packages="libgstreamer-plugins-base1.0-0 libgstreamer1.0-0 gstreamer1.0-plug
     
     
     # Several retries is a workaround for flaky downloads
-RUN packages="libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev libgstreamer-plugins-bad1.0-0 libgstreamer-plugins-base1.0-0 gstreamer1.0-tools gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly"\
-    && apt-get -y update \
+RUN packages="curl libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev libgstreamer-plugins-bad1.0-0 libgstreamer-plugins-base1.0-0 gstreamer1.0-tools gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly gstreamer1.0-omx"\
+    && apt-get update \
     && apt-get -y install $packages \
     || apt-get -y install $packages \
     || apt-get -y install $packages \
@@ -68,8 +68,8 @@ RUN packages="libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-
     || apt-get -y install $packages 
     
 ENV INITSYSTEM on
-RUN packages="libeigen3-dev libjpeg-dev libtiff5-dev libtiff5 libjasper-dev libjasper1 libpng12-dev libpng12-0 libavcodec-dev libavformat-dev"\
-    && apt-get -y update \
+RUN packages="curl libeigen3-dev libjpeg-dev libtiff5-dev libtiff5 libjasper-dev libjasper1 libpng12-dev libpng12-0 libavcodec-dev libavformat-dev"\
+    && apt-get update \
     && apt-get -y install $packages \
     || apt-get -y install $packages \
     || apt-get -y install $packages \
