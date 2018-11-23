@@ -59,7 +59,7 @@ RUN packages="libgstreamer-plugins-base1.0-0 libgstreamer1.0-0 gstreamer1.0-plug
     
     
     # Several retries is a workaround for flaky downloads
-RUN packages="libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev libgstreamer-plugins-bad1.0-0 libgstreamer-plugins-base1.0-0 gstreamer1.0-tools gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly gstreamer1.0-omx"\
+RUN packages="libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev libgstreamer-plugins-bad1.0-0 libgstreamer-plugins-base1.0-0 gstreamer1.0-tools gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly"\
     && apt-get -y update \
     && apt-get -y install $packages \
     || apt-get -y install $packages \
