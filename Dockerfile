@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		subversion \
 	&& rm -rf /var/lib/apt/lists/*
 		
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils	
 RUN apt-get install -y \
 		autoconf \
 		build-essential \
