@@ -150,16 +150,16 @@ RUN mkdir live
 RUN mkdir detections
 RUN mkdir detectionss3
 RUN mkdir lives3
-RUN mkdir .certifications
-RUN chmod 757 .certifications
+#RUN mkdir .certifications
+#RUN chmod 757 .certifications
 Run cd ..
 Run chmod 757 Litterbug-docker-raspbian
 
 
 # Copy the certification files and AWS keys from the /home/pi folder to the app folder
 #ENV HOME /home/pi 
-RUN cp $HOME/.certifications/*.* /usr/src/app/Litterbug-docker-raspbian/
-RUN cp $HOME/key.txt /usr/src/app/Litterbug-docker-raspbian/
+#RUN cp $HOME/.certifications/*.* /usr/src/app/Litterbug-docker-raspbian/
+#RUN cp $HOME/key.txt /usr/src/app/Litterbug-docker-raspbian/
 #COPY $HOME/.certifications/*.* /usr/src/app/Litterbug-docker-raspbian/
 #COPY $HOME/key.txt /usr/src/app/Litterbug-docker-raspbian/
 
