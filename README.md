@@ -124,6 +124,8 @@ Todo How to generate certs
 
 ### Start the build
 1. $cd Litterbug-docker-raspbian
+2. $./build.sh
+Possibly remove the following
 2. $sudo docker build -t litterbugclient . 
 
 ## Start the container
