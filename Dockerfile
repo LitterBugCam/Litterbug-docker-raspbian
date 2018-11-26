@@ -138,8 +138,8 @@ RUN pip install  enum AWSIoTPythonSDK boto3 inotify_simple uuid
 
 
 WORKDIR /usr/src/app
-
-COPY bin include lib /usr/src/app
+# bin include lib are the folders that are required
+COPY . /usr/src/app
 RUN cd /usr/src/app
 
 RUN git clone https://github.com/LitterBugCam/Litterbug-docker-raspbian.git
