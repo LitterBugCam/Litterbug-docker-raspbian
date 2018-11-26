@@ -164,7 +164,7 @@ Run chmod 757 Litterbug-docker-raspbian
 #COPY $HOME/key.txt /usr/src/app/Litterbug-docker-raspbian/
 
 # Compile the application
-RUN cd Litterbug-docker-raspian
+RUN cd Litterbug-docker-raspbian
 RUN ldconfig
 RUN  make
 #Start the application
