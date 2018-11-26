@@ -157,15 +157,15 @@ Run chmod 757 Litterbug-docker-raspbian
 
 
 # Copy the certification files and AWS keys from the /home/pi folder to the app folder
-ENV HOME /home/pi 
-RUN cp $HOME/.certifications/*.* /usr/src/app/Litterbug-docker-raspbian/
-RUN cp $HOME/key.txt /usr/src/app/Litterbug-docker-raspbian/
+#ENV HOME /home/pi 
+#RUN cp $HOME/.certifications/*.* /usr/src/app/Litterbug-docker-raspbian/
+#RUN cp $HOME/key.txt /usr/src/app/Litterbug-docker-raspbian/
 #COPY $HOME/.certifications/*.* /usr/src/app/Litterbug-docker-raspbian/
 #COPY $HOME/key.txt /usr/src/app/Litterbug-docker-raspbian/
 
 # Compile the application
-RUN cd Litterbug-docker-raspian
-RUN ldconfig
-RUN  make
+#RUN cd Litterbug-docker-raspian
+#RUN ldconfig
+#RUN  make
 #Start the application
-CMD  ["python","AWSIOT_Client.py"]
+#CMD  ["python","AWSIOT_Client.py"]
