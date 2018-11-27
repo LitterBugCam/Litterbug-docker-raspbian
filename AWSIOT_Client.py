@@ -105,9 +105,13 @@ def get_private():
 os.system(' tvservice -o')
 os.system(' mkdir detections')
 os.system(' mkdir live')
+#For docker on raspbian, a different MAC address is set each time the container is started
+# As the MAC address needs to be registered in the App, we will hard code the MAC address for now.
+# The address read directly from the hardware  - e.g. docker MAC or Raspberrypi MAC if not using docker
+mac1 = get_mac()
+print (mac1)
+mac = 2485377892354
 
-mac = get_mac()
-print (mac)
 s3 = boto3.client('s3', aws_access_key_id= open('keys.txt').readline().split(None, 1)[0],
 aws_secret_access_key= open('keys.txt').readlines()[1].split(None, 1)[0])
 
