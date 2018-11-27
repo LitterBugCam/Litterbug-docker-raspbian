@@ -125,9 +125,10 @@ Todo How to generate certs
 ### Start the build
 1. $cd Litterbug-docker-raspbian
 2. $chmod a+x build.sh
-2. $./build.sh
+3. $./build.sh
 Possibly remove the following
 2. $sudo docker build -t litterbugclient . 
 
 ## Start the container
 1. $sudo docker run -i -t litterbugclient /bin/bash 
+2. $python AWSIOT_Client.py
