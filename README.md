@@ -143,6 +143,9 @@ Stop Container
 $sudo docker stop {CONTAINER NAME}   
 Start Container  
 $sudo docker start {CONTAINER NAME}  
+Open container shell
+$sudo docker exec -it {CONTAINER NAME}  bash  
+
 
 
 
