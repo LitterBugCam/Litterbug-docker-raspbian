@@ -42,13 +42,13 @@ Starting the Raspberry pi
 
 
 ### Increase the SWAP size of Raspberry pi
-$sudo chmod 757 /etc/dphys-swapfile
-$sudo nano /etc/dphys-swapfile
-Change as follows
-1.CONF_SWAPSIZE = 2650
-Uncomment
-2. CONF_SWAPFACTOR=2
-Ctrl x and Yes to save and exit.
+$sudo chmod 757 /etc/dphys-swapfile  
+$sudo nano /etc/dphys-swapfile  
+Change as follows  
+1.CONF_SWAPSIZE = 2650  
+Uncomment  
+2. CONF_SWAPFACTOR=2  
+Ctrl x and Yes to save and exit.  
 
 ### Enable RPi features
 1. RPi Camera. This step is only needed for the RPi Camera. It is not required for a USB webcam. 
@@ -100,16 +100,16 @@ You can now disconnect the Monitor, Keyboard and Mouse from the RPi. And if you 
 
 ### Install Docker client
 Using the SSH terminal (or the terminal of the RPi)
-1. Install docker
-$curl –sSL https://get.docker.com | sh
-2. Allow use of docker without sudo
-$sudo usermod –aG docker pi where pi is the username
-3. Reboot
-$sudo reboot
+1. Install docker  
+$curl –sSL https://get.docker.com | sh  
+2. Allow use of docker without sudo  
+$sudo usermod –aG docker pi where pi is the username  
+3. Reboot  
+$sudo reboot  
 
 
 ### Copy certificates
-Using e.g. Filezilla copy the .certications folder to the /home/pi/ directory
+Using e.g. Filezilla copy the .certifications folder to the /home/pi/ directory
 Todo How to generate certs
 ### Copy keys
 Using e.g. Filezilla copy the keys.txt file the /home/pi/ directory
