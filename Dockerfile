@@ -66,10 +66,17 @@ RUN packages="curl libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstre
     || apt-get -y install $packages \
     || apt-get -y install $packages \
     || apt-get -y install $packages 
-    
+
+# List of packages causing issues at installation
+RUN apt-get install -y  gstreamer1.0-omx 
+RUN apt-get install -y  libjasper-dev 
+RUN apt-get install -y  libjasper1
+RUN apt-get install -y  libpng12-dev
+RUN apt-get install -y  libpng12-0
+
 ENV INITSYSTEM on
-# removed libjasper-dev libjasper1 libpng12-dev libpng12-0
-RUN packages="curl libeigen3-dev libjpeg-dev libtiff5-dev libtiff5 libavcodec-dev libavformat-dev"\
+# removed gstreamer1.0-omx    libjasper-dev libjasper1 libpng12-dev libpng12-0
+RUN packages="curl libeigen3-dev libjpeg-dev libtiff5-dev libtiff5   libavcodec-dev libavformat-dev"\
     && apt-get update \
     && apt-get -y install $packages \
     || apt-get -y install $packages \
