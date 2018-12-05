@@ -46,7 +46,7 @@ RUN apt-get install -y \
 				echo 'libmysqlclient-dev'; \
 			fi \
 		) 
-	
+
 	
 # Several retries is a workaround for flaky downloads
 RUN packages="libgstreamer-plugins-base1.0-0 libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-libav curl python python-dev python-pip python3-pip unzip supervisor libzmq3-dev v4l-utils python3-dev python3-numpy python-numpy"\
@@ -59,7 +59,7 @@ RUN packages="libgstreamer-plugins-base1.0-0 libgstreamer1.0-0 gstreamer1.0-plug
     
     
     # Several retries is a workaround for flaky downloads
-RUN packages="curl libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev libgstreamer-plugins-bad1.0-0 libgstreamer-plugins-base1.0-0 gstreamer1.0-tools gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly gstreamer1.0-omx-rpi"\
+RUN packages="curl libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev libgstreamer-plugins-bad1.0-0 libgstreamer-plugins-base1.0-0 gstreamer1.0-tools gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly"\
     && apt-get update \
     && apt-get -y install $packages \
     || apt-get -y install $packages \
@@ -68,7 +68,8 @@ RUN packages="curl libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstre
     || apt-get -y install $packages 
 
 # List of packages causing issues at installation
-#RUN apt-get install -y  gstreamer1.0-omx 
+run apt-get update
+RUN apt-get install -y  gstreamer1.0-omx 
 RUN apt-get install -y  libjasper-dev 
 RUN apt-get install -y  libjasper1
 RUN apt-get install -y  libpng12-dev
