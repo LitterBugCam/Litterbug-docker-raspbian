@@ -1,4 +1,6 @@
-FROM debian:9.6
+FROM debian:stretch
+
+#FROM debian:9.6
 
 
 #Start installing components for opencv2
