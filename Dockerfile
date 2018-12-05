@@ -59,7 +59,7 @@ RUN packages="libgstreamer-plugins-base1.0-0 libgstreamer1.0-0 gstreamer1.0-plug
     
     
     # Several retries is a workaround for flaky downloads
-RUN packages="curl libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev libgstreamer-plugins-bad1.0-0 libgstreamer-plugins-base1.0-0 gstreamer1.0-tools gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly"\
+RUN packages="curl libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev libgstreamer-plugins-bad1.0-0 libgstreamer-plugins-base1.0-0 gstreamer1.0-tools gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly gst-omx "\
     && apt-get update \
     && apt-get -y install $packages \
     || apt-get -y install $packages \
@@ -68,8 +68,7 @@ RUN packages="curl libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstre
     || apt-get -y install $packages 
 
 # List of packages causing issues at installation
-RUN add-apt-repository universe
-RUN apt-get install -y  gstreamer1.0-omx 
+#RUN apt-get install -y  gstreamer1.0-omx 
 RUN apt-get install -y  libjasper-dev 
 RUN apt-get install -y  libjasper1
 RUN apt-get install -y  libpng12-dev
