@@ -133,16 +133,16 @@ Possibly remove the following
 1. $sudo docker run -i -t litterbugclient /bin/bash 
 
 ## Managing the container
-Check list of container both running and stopped
-$sudo docker ps -a 
-Find name of running container  
-$sudo docker ps
-Check logs of the running container
-$sudo docker logs {CONTAINER NAME}
-Stop Container
-$sudo docker stop {CONTAINER NAME} 
-Start Container
-$sudo docker start {CONTAINER NAME}
+Check list of container both running and stopped  
+$sudo docker ps -a  
+Find name of running container    
+$sudo docker ps  
+Check logs of the running container  
+$sudo docker logs {CONTAINER NAME}  
+Stop Container  
+$sudo docker stop {CONTAINER NAME}   
+Start Container  
+$sudo docker start {CONTAINER NAME}  
 
 
 
