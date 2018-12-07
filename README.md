@@ -114,6 +114,12 @@ Todo How to generate certs
 ### Copy keys
 Using e.g. Filezilla copy the keys.txt file the /home/pi/ directory
 Todo How to generate certs
+### Copy MAC Address
+The MAC address is added to the keys.txt file on the third line
+This is the MAC address that will be added as a device in the app.littberbug.cam server
+Use a MAC address belonging to the pi e.g. the eth0 MAC address.
+To find the MAC address
+On the pi $
 
 ### Install Litterbug
 1. $sudo apt-get update
