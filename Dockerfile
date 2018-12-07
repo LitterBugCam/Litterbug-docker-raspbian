@@ -1,7 +1,4 @@
-FROM debian:jessie
-
-#FROM debian:9.6
-
+FROM debian:9.4
 
 #Start installing components for opencv2
 RUN apt-get update
