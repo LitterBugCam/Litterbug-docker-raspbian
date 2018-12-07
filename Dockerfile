@@ -1,4 +1,4 @@
-FROM debian:9.4
+FROM debian:oldstable-20181112
 
 #Start installing components for opencv2
 RUN apt-get update
@@ -67,8 +67,9 @@ RUN packages="curl libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstre
     || apt-get -y install $packages 
 
 # List of packages causing issues at installation
-run apt-get update
-RUN apt-get install -y  gstreamer1.0-omx 
+RUN apt-get update
+RUN apt-get install -y gst123
+#RUN apt-get install -y  gstreamer1.0-omx 
 RUN apt-get install -y  libjasper-dev 
 RUN apt-get install -y  libjasper1
 RUN apt-get install -y  libpng12-dev
