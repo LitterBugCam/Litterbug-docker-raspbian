@@ -109,11 +109,12 @@ os.system(' mkdir live')
 # As the MAC address needs to be registered in the App, we will hard code the MAC address for now.
 # The address read directly from the hardware  - e.g. docker MAC or Raspberrypi MAC if not using docker
 mac1 = get_mac()
-print (mac1)
-mac = 2485377892354
+print ("The MAC address "+mac1)
+#mac = 2485377892354
 
 s3 = boto3.client('s3', aws_access_key_id= open('keys.txt').readline().split(None, 1)[0],
 aws_secret_access_key= open('keys.txt').readlines()[1].split(None, 1)[0])
+mac = open('keys.txt').readlines()[2].split(None, 1)[0]
 
 s3.download_file('littercam','device-'+str(mac)+'/devicename.txt', 'devicename.txt')
 devicename = open('devicename.txt').readline().split(None, 1)[0]
