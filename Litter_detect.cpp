@@ -3,6 +3,7 @@
 #include "scoring.h"
 #include "parameters.h"
 #include <omp.h>
+#include <raspicam/raspicam_cv.h>
 
 objects abandoned_objects;
 
@@ -108,13 +109,31 @@ while(f<=12)
     else
         videopath = argv[1];
 
-    VideoCapture capture("/dev/video0");
+   // VideoCapture capture("/dev/video0");
+  raspicam::RaspiCam_Cv capture;
+  capture.set(CV_CAP_PROP_FPS, 10);
+  capture.set(CV_CAP_PROP_FRAME_WIDTH,640);
+  capture.set(CV_CAP_PROP_FRAME_HEIGHT,480);
 
+  //capture.set( CV_CAP_PROP_FORMAT, CV_8UC1);
+  cout<<"Opening Camera..."<<endl;
+  if (!capture.open()) {
+  cerr<<"Error opening the PIcamera"<<endl;
+  	VideoCapture capture("/dev/video0");
+  if(!capture.isOpened())
+  	{
+                cerr<<"Error opening the USB camera"<<endl;
+  //	return -1;
+          }
+  }
 
     Mat fore;
     //capture.set(CV_CAP_PROP_POS_FRAMES, 255);
-    capture >> image;
-
+   // capture >> image;
+  capture.grab();
+            capture.retrieve ( image);
+	
+	
     if (resize_scale != 1)
         resize(image, image, Size(image.cols * resize_scale, image.rows * resize_scale));
 
@@ -150,9 +169,10 @@ dirsum1.copyTo(D_Sy);
         if (i > frameinit) alpha_S = alpha;
       //  cout <<"jjjj"<<endl;
 
-        capture >> image;
+       // capture >> image;
         // cout <<"uuuu"<<endl;
-
+  	capture.grab();
+            capture.retrieve ( image);
         if(image.empty())
         {
            cout <<"ooo"<<endl;
