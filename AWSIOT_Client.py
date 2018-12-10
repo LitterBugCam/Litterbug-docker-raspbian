@@ -155,7 +155,7 @@ myMQTTClient.connect()
 
 con = psycopg2.connect("host='litterbugdb.c1ekrfqx70oj.eu-west-1.rds.amazonaws.com' dbname='littering' user='ilias' password='Algeria7201990'")
 cur = con.cursor()
-cur.execute("SELECT id FROM devices where mac_addr='%s'",[mac])
+cur.execute("SELECT id FROM devices where mac_addr=%s",[mac])
 row = cur.fetchone()
 device_id=row[0]
 print (device_id)
