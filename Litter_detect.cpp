@@ -109,8 +109,8 @@ while(f<=12)
     else
         videopath = argv[1];
 
-   // VideoCapture capture("/dev/video0");
-  raspicam::RaspiCam_Cv capture;
+   VideoCapture capture("/dev/video0");
+  //raspicam::RaspiCam_Cv capture;
   capture.set(CV_CAP_PROP_FPS, 10);
   capture.set(CV_CAP_PROP_FRAME_WIDTH,640);
   capture.set(CV_CAP_PROP_FRAME_HEIGHT,480);
