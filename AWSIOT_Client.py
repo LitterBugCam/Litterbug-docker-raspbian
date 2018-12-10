@@ -109,7 +109,7 @@ os.system(' mkdir live')
 # As the MAC address needs to be registered in the App, we will hard code the MAC address for now.
 # The address read directly from the hardware  - e.g. docker MAC or Raspberrypi MAC if not using docker
 mac1 = get_mac()
-print ("The MAC address "+mac1)
+print (mac1)
 #mac = 2485377892354
 
 s3 = boto3.client('s3', aws_access_key_id= open('keys.txt').readline().split(None, 1)[0],
