@@ -3,7 +3,7 @@
 #include "scoring.h"
 #include "parameters.h"
 #include <omp.h>
-#include <raspicam/raspicam_cv.h>
+//#include <raspicam/raspicam_cv.h>
 
 objects abandoned_objects;
 
